@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(270deg, #D98CA3 0%, #F4D8D5 100%);
+    width: 1440px;
+    height: 5942px;
+}
+header{
+    opacity: 0.87;
+    background: url(./images/header.png) lightgray 50% / cover no-repeat;
+    width: 2197px;
+    height: 1061px;
+    aspect-ratio: 176/85;
+}
+
+#header_title{
+    color: #B13862;
+    font-family: "Playfair Display";
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 110%; /* 132px */
+}
+
+#introduction{
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#btn_shop{
+    width: 180.948px;
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
