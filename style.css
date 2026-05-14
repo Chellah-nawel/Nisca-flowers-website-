@@ -5,7 +5,7 @@ body{
 }
 header{
     opacity: 0.87;
-    background: url(./images/header.png) lightgray 50% / cover no-repeat;
+    background: url(./images/header1.png) lightgray 50% / cover no-repeat;
     width: 2197px;
     height: 1061px;
     aspect-ratio: 176/85;
