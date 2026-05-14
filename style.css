@@ -38,3 +38,37 @@ header{
     font-weight: 700;
     line-height: normal;
 }
+
+.titles{
+    color: #5C3D31;
+    text-align: center;
+    font-family: Allura;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5.4px;
+}
+
+#about_us_intro{
+    color: #5C3D31;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#contact_us{
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    fill: #B13862;
+    filter: drop-shadow(3px 5px 3.8px rgba(0, 0, 0, 0.25));
+    width: 324px;
+    height: 94px;
+    }
