@@ -26,7 +26,6 @@ img {
     height: auto;
 }
 
-/* Script Font */
 .script-title {
     font-family: 'Great Vibes', cursive;
     font-size: 48px;
@@ -35,9 +34,7 @@ img {
     margin-bottom: 30px;
 }
 
-/* Header */
 .header {
-    background-color: #FAEAE8;
     padding: 15px 50px;
     position: sticky;
     top: 0;
@@ -97,9 +94,8 @@ img {
     background-color: #C4788A;
 }
 
-/* Hero Section */
+
 .hero {
-    background: linear-gradient(135deg, #FAEAE8 0%, #F5D5D0 100%);
     padding: 40px 50px;
     position: relative;
     min-height: 500px;
@@ -255,7 +251,6 @@ img {
 
 /* Occasions Section */
 .occasions-section {
-    background: linear-gradient(180deg, #F5D5D0 0%, #FAEAE8 100%);
     padding: 60px 50px;
 }
 
@@ -311,7 +306,6 @@ img {
 
 /* Features Bar */
 .features-bar {
-    background-color: #EAD4CF;
     padding: 30px 50px;
 }
 
@@ -354,7 +348,6 @@ img {
 
 /* Personalize Section */
 .personalize-section {
-    background-color: #FAEAE8;
     padding: 60px 50px;
     text-align: center;
 }
@@ -485,7 +478,6 @@ img {
 
 /* Footer */
 .footer {
-    background-color: #D4869A;
     padding: 40px 50px 20px;
 }
 
