@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF5F3;
+    background: linear-gradient(270deg, #D98CA3 0%, #F4D8D5 100%);
     color: #333;
     overflow-x: hidden;
 }
@@ -26,45 +25,55 @@ img {
     height: auto;
 }
 
-/* Script Font */
 .script-title {
+    color: #5C3D31;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 5.4px;
     font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    color: #C4788A;
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* Header */
 .header {
-    background-color: #FAEAE8;
-    padding: 15px 50px;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .header-container {
+    border-radius: 14px;
+    background: rgba(248, 237, 238, 0.41);
     display: flex;
+    width: 1300px;
+    height: 90px;
+    padding-left: 33px;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding-right: 20px;
 }
 
 .logo img {
-    height: 50px;
+    height: 90px;
 }
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 50px;
 }
 
 .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+    color: #5C3D31;
+    font-family: "Playfair Display";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     transition: color 0.3s;
 }
 
@@ -80,16 +89,22 @@ img {
 }
 
 .cart-icon img {
-    height: 24px;
+    height: 50px;
 }
 
 .btn-join {
-    background-color: #D4869A;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    width: 160px;
+    height: 50px;
+    border-radius: 12px;
+    background: #B13862;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 8px 40px;
     transition: background-color 0.3s;
 }
 
@@ -97,12 +112,14 @@ img {
     background-color: #C4788A;
 }
 
-/* Hero Section */
+
 .hero {
-    background: linear-gradient(135deg, #FAEAE8 0%, #F5D5D0 100%);
     padding: 40px 50px;
     position: relative;
-    min-height: 500px;
+    width: 1440px;
+    height: 756px;
+    background-image: url(./images/hero1.svg);
+    background-repeat: no-repeat;
 }
 
 .hero-container {
@@ -119,243 +136,189 @@ img {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    font-weight: 600;
-    color: #333;
-    line-height: 1.1;
+    margin-top: 200px;
     margin-bottom: 20px;
-}
-
-.hero-title span {
-    font-style: italic;
-    color: #C4788A;
+    color: #B13862;
+    font-family: "Playfair Display";
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100px;
 }
 
 .hero-description {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.8;
     margin-bottom: 30px;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .btn-shop {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #3D5A47;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 500;
+    display: flex;
+    width: 290px;
+    height: 60px;
+    border-radius: 12px;
+    background: #B13862;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 27px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 8px 60px;
     transition: background-color 0.3s;
+    margin-top: 50px;
 }
 
 .btn-shop:hover {
-    background-color: #2D4A37;
+    background-color: #d9799b;
 }
 
-.btn-shop .arrow {
-    font-size: 18px;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.hero-image img {
-    max-height: 450px;
-    object-fit: contain;
-}
-
-.hero-slider-arrow {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.slider-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #C4788A;
-    background: rgba(255, 255, 255, 0.8);
-    color: #C4788A;
-    font-size: 24px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.slider-btn:hover {
-    background: #C4788A;
-    color: white;
-}
-
-.hero-side-flowers {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-}
-
-.hero-side-flowers img {
-    height: 100%;
-    object-fit: cover;
-}
-
-.decorative-heart {
-    position: absolute;
-    top: 20px;
-    right: 100px;
-}
-
-.decorative-heart img {
-    width: 80px;
-}
-
-/* Story Section */
 .story-section {
-    background-color: #FAEAE8;
-    padding: 60px 50px;
+    padding: 100px 50px;
     text-align: center;
 }
 
 .story-description {
-    font-size: 13px;
-    color: #555;
-    line-height: 2;
+    color: #5C3D31;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
     margin-bottom: 30px;
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .btn-contact {
+    width: 290px;
+    height: 50px;
+    border-radius: 12px;
+    background: #B13862;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 25px;
+    font-weight: 700;
+    padding: 5px 10px;
     display: inline-block;
-    background-color: transparent;
-    color: #333;
-    padding: 12px 40px;
-    border: 2px solid #333;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 500;
     transition: all 0.3s;
+    margin-top: 20px;
+    margin-bottom: 100px;
 }
 
 .btn-contact:hover {
-    background-color: #333;
-    color: white;
+    background-color: #d9799b;
 }
 
-/* Occasions Section */
-.occasions-section {
-    background: linear-gradient(180deg, #F5D5D0 0%, #FAEAE8 100%);
-    padding: 60px 50px;
+.categories{
+    background: #EFD7CE;
+    width: 1440px;
+    height: 532px;
+    padding-top: 70px;
 }
 
 .occasions-grid {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.occasion-card {
-    text-align: center;
-    max-width: 280px;
-}
-
-.occasion-image {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
-    overflow: hidden;
+    gap: 100px;
+    margin-top: -300px;
+    margin-left: 30px;
+    margin-bottom: 200px;
 }
 
 .occasion-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 360px;
+    height: 360px;
 }
 
-.occasion-card h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 10px;
+.occasion-title {
+    color: #5C3D31;
+    font-family: "Playfair Display";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .occasion-card p {
-    font-size: 13px;
-    color: #666;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     margin-bottom: 10px;
 }
 
 .see-more {
-    font-size: 13px;
-    color: #C4788A;
-    font-weight: 500;
-}
-
-.see-more:hover {
+    color: #B13862;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
     text-decoration: underline;
-}
-
-/* Features Bar */
-.features-bar {
-    background-color: #EAD4CF;
-    padding: 30px 50px;
+    font-weight: 500;
 }
 
 .features-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-bottom: -60px;
 }
 
 .feature {
-    text-align: center;
-}
-
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 245px;
+    height: 117.842px;
+    border-radius: 12px;
+    background: #F8EDEE;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
 }
 
 .feature-icon img {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .feature-label {
     font-size: 12px;
-    color: #C4788A;
-    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #B13862;
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
 }
 
 .feature-text {
-    font-size: 11px;
-    color: #666;
+    text-align: left;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
-/* Personalize Section */
 .personalize-section {
-    background-color: #FAEAE8;
-    padding: 60px 50px;
+    padding-top:150px ;
+    background-color: #EFD7CE;
+    width: 1440px;
+    height: 1333px;
     text-align: center;
 }
 
@@ -485,7 +448,6 @@ img {
 
 /* Footer */
 .footer {
-    background-color: #D4869A;
     padding: 40px 50px 20px;
 }
 
