@@ -114,7 +114,10 @@ img {
 .hero {
     padding: 40px 50px;
     position: relative;
-    min-height: 500px;
+    width: 1440px;
+    height: 756px;
+    background-image: url(./images/hero1.svg);
+    background-repeat: no-repeat;
 }
 
 .hero-container {
@@ -131,65 +134,49 @@ img {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    font-weight: 600;
-    color: #333;
-    line-height: 1.1;
+    margin-top: 200px;
     margin-bottom: 20px;
-}
-
-.hero-title span {
-    font-style: italic;
-    color: #C4788A;
+    color: #B13862;
+    font-family: "Playfair Display";
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100px;
 }
 
 .hero-description {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.8;
     margin-bottom: 30px;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .btn-shop {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #3D5A47;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 500;
+    display: flex;
+    width: 290px;
+    height: 60px;
+    border-radius: 12px;
+    background: #B13862;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 27px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 8px 60px;
     transition: background-color 0.3s;
+    margin-top: 50px;
 }
 
 .btn-shop:hover {
-    background-color: #2D4A37;
+    background-color: #d9799b;
 }
 
 .btn-shop .arrow {
     font-size: 18px;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.hero-image img {
-    max-height: 450px;
-    object-fit: contain;
-}
-
-.hero-slider-arrow {
-    position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .slider-btn {
