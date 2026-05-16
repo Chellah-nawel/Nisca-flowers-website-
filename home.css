@@ -229,6 +229,7 @@ img {
     gap: 100px;
     margin-top: -300px;
     margin-left: 30px;
+    margin-bottom: 200px;
 }
 
 .occasion-image img {
@@ -268,51 +269,56 @@ img {
     font-weight: 500;
 }
 
-/* Features Bar */
-.features-bar {
-    padding: 30px 50px;
-}
-
 .features-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-bottom: -60px;
 }
 
 .feature {
-    text-align: center;
-}
-
-.feature-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 245px;
+    height: 117.842px;
+    border-radius: 12px;
+    background: #F8EDEE;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
 }
 
 .feature-icon img {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+    padding-left: 20px;
+    padding-top: 20px;
 }
 
 .feature-label {
     font-size: 12px;
-    color: #C4788A;
-    font-weight: 600;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #B13862;
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
 }
 
 .feature-text {
-    font-size: 11px;
-    color: #666;
+    text-align: left;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
-/* Personalize Section */
 .personalize-section {
-    padding: 60px 50px;
+    padding-top:150px ;
+    background-color: #EFD7CE;
+    width: 1440px;
+    height: 1333px;
     text-align: center;
 }
 
