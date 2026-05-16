@@ -108,7 +108,7 @@ ul {
 }
 
 
-.hero {
+#hero {
     padding: 40px 50px;
     position: relative;
     width: 1440px;
@@ -172,7 +172,7 @@ ul {
     background-color: #d9799b;
 }
 
-.story-section {
+#story-section {
     padding: 100px 50px;
     text-align: center;
 }
@@ -309,7 +309,7 @@ ul {
     line-height: normal;
 }
 
-.personalize-section {
+#personalize-section {
     padding-top:150px ;
     background-color: #EFD7CE;
     width: 1440px;
