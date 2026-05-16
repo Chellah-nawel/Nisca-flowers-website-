@@ -35,33 +35,43 @@ img {
 }
 
 .header {
-    padding: 15px 50px;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .header-container {
+    border-radius: 14px;
+    background: rgba(248, 237, 238, 0.41);
     display: flex;
+    width: 1300px;
+    height: 90px;
+    padding-left: 33px;
+    gap: 10px;
     align-items: center;
     justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding-right: 20px;
 }
 
 .logo img {
-    height: 50px;
+    height: 90px;
 }
 
 .nav-links {
     display: flex;
-    gap: 40px;
+    gap: 50px;
 }
 
 .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
+    color: #5C3D31;
+    font-family: "Playfair Display";
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     transition: color 0.3s;
 }
 
@@ -77,16 +87,22 @@ img {
 }
 
 .cart-icon img {
-    height: 24px;
+    height: 50px;
 }
 
 .btn-join {
-    background-color: #D4869A;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    width: 160px;
+    height: 50px;
+    border-radius: 12px;
+    background: #B13862;
+    box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: "Playfair Display";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 8px 40px;
     transition: background-color 0.3s;
 }
 
