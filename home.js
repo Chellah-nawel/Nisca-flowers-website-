@@ -1,21 +1,19 @@
-
- const slides = [
+const slides = [
     {
         title: "A Moment<br>of Love",
-        text: "Sometimes, the most beautiful gifts begin with a simple thought.",
-        image: "/images/hero1.svg"
-    },
+        text: "Sometimes, the most beautiful gifts begin with<br>a simple thought. A bouquet chosen with love<br> can say more than words ever could.",
+        image: "./images/hero1.svg" },
 
     {
         title: " Special Flowers <br>For You",
         text: "Every bouquet tells a story full of emotions and beauty.",
-        image: "/images/hero2.svg"
+        image: "./images/hero2.svg"
     },
 
     {
         title: "Special<br>Moments",
         text: "Celebrate your memories with elegant flowers.",
-        image: "/images/hero3.svg"
+        image: "./images/hero3.svg"
     }
 ];
 
@@ -41,145 +39,34 @@ button.addEventListener("click", () => {
     hero.style.backgroundImage = `url(${slides[current].image})`;
 });
 
-// // Nisca Flowers Website JavaScript
+//expires in 30 days
+function cookieExpireDate() {
+    var d = new Date();
+    d.setTime(d.getTime() + 30 * 24 * 60 * 60 * 1000);
+    return d.toUTCString();
+}
 
-// document.addEventListener('DOMContentLoaded', function() {
-    
-//     // Smooth scrolling for navigation links
-//     const navLinks = document.querySelectorAll('.nav-links a');
-//     navLinks.forEach(link => {
-//         link.addEventListener('click', function(e) {
-//             // Add active class handling
-//             navLinks.forEach(l => l.classList.remove('active'));
-//             this.classList.add('active');
-//         });
-//     });
+//print the banner if no consent
+if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+}
 
-//     // Hero Slider functionality
-//     const sliderBtn = document.querySelector('.slider-btn');
-//     if (sliderBtn) {
-//         sliderBtn.addEventListener('click', function() {
-//             // Slider functionality placeholder
-//             console.log('Next slide');
-//         });
-//     }
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.cookie = "cookieConsent=accepted; expires=" + cookieExpireDate() + "; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+}
 
-//     // Contact Form submission
-//     const contactForm = document.querySelector('.contact-form');
-//     if (contactForm) {
-//         contactForm.addEventListener('submit', function(e) {
-//             e.preventDefault();
-            
-//             // Get form values
-//             const firstName = document.getElementById('firstName').value;
-//             const familyName = document.getElementById('familyName').value;
-//             const email = document.getElementById('email').value;
-//             const message = document.getElementById('message').value;
+function declineCookies() {
+    localStorage.setItem('cookieConsent', 'declined');
+    document.cookie = "cookieConsent=declined; expires=" + cookieExpireDate() + "; path=/";
+    document.getElementById('cookie-banner').style.display = 'none';
+}
 
-//             // Validate form
-//             if (!firstName || !familyName || !email || !message) {
-//                 alert('Please fill in all fields');
-//                 return;
-//             }
-
-//             // Email validation
-//             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//             if (!emailRegex.test(email)) {
-//                 alert('Please enter a valid email address');
-//                 return;
-//             }
-
-//             // Form submission success
-//             alert('Thank you for your message! We will get back to you soon.');
-//             contactForm.reset();
-//         });
-//     }
-
-//     // Scroll animations
-//     const observerOptions = {
-//         threshold: 0.1,
-//         rootMargin: '0px 0px -50px 0px'
-//     };
-
-//     const observer = new IntersectionObserver(function(entries) {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add('animate-in');
-//             }
-//         });
-//     }, observerOptions);
-
-//     // Observe elements for animation
-//     const animateElements = document.querySelectorAll('.occasion-card, .feature, .bouquet-item');
-//     animateElements.forEach(el => {
-//         observer.observe(el);
-//     });
-
-//     // Mobile menu toggle (placeholder for future implementation)
-//     function createMobileMenu() {
-//         const header = document.querySelector('.header-container');
-//         const nav = document.querySelector('.nav');
-        
-//         // Create hamburger menu button
-//         const menuBtn = document.createElement('button');
-//         menuBtn.className = 'mobile-menu-btn';
-//         menuBtn.innerHTML = '☰';
-//         menuBtn.style.display = 'none';
-        
-//         // Insert before header actions
-//         const headerActions = document.querySelector('.header-actions');
-//         header.insertBefore(menuBtn, headerActions);
-
-//         // Toggle menu on click
-//         menuBtn.addEventListener('click', function() {
-//             nav.classList.toggle('mobile-open');
-//         });
-
-//         // Show/hide based on screen size
-//         function checkScreenSize() {
-//             if (window.innerWidth <= 768) {
-//                 menuBtn.style.display = 'block';
-//             } else {
-//                 menuBtn.style.display = 'none';
-//                 nav.classList.remove('mobile-open');
-//             }
-//         }
-
-//         window.addEventListener('resize', checkScreenSize);
-//         checkScreenSize();
-//     }
-
-//     createMobileMenu();
-
-//     // Button hover effects
-//     const buttons = document.querySelectorAll('.btn-shop, .btn-contact, .btn-personalize, .btn-send, .btn-join');
-//     buttons.forEach(btn => {
-//         btn.addEventListener('mouseenter', function() {
-//             this.style.transform = 'scale(1.05)';
-//         });
-//         btn.addEventListener('mouseleave', function() {
-//             this.style.transform = 'scale(1)';
-//         });
-//     });
-
-//     // Image lazy loading
-//     const images = document.querySelectorAll('img');
-//     if ('loading' in HTMLImageElement.prototype) {
-//         images.forEach(img => {
-//             img.loading = 'lazy';
-//         });
-//     }
-
-//     // Bouquet grid hover effects
-//     const bouquetItems = document.querySelectorAll('.bouquet-item');
-//     bouquetItems.forEach(item => {
-//         item.addEventListener('mouseenter', function() {
-//             this.style.transform = 'scale(1.02)';
-//             this.style.transition = 'transform 0.3s ease';
-//         });
-//         item.addEventListener('mouseleave', function() {
-//             this.style.transform = 'scale(1)';
-//         });
-//     });
-
-// });
+//masquer apres 4s
+setTimeout(function() {
+    var msgs = document.querySelectorAll('.msg-box');
+    for (var i = 0; i < msgs.length; i++) {
+        msgs[i].parentNode.removeChild(msgs[i]);
+    }
+}, 4000);
