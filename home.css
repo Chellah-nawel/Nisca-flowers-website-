@@ -117,6 +117,13 @@ ul {
     background-repeat: no-repeat;
 }
 
+.next-btn{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
 .hero-container {
     display: flex;
     align-items: center;
@@ -154,7 +161,7 @@ ul {
 .btn-shop {
     display: flex;
     width: 290px;
-    height: 60px;
+    height: 70px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -163,7 +170,7 @@ ul {
     font-size: 27px;
     font-weight: 700;
     line-height: normal;
-    padding: 8px 60px;
+    padding: 13px 60px;
     transition: background-color 0.3s;
     margin-top: 50px;
 }
@@ -192,7 +199,7 @@ ul {
 
 .btn-contact {
     width: 290px;
-    height: 50px;
+    height: 60px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -200,7 +207,7 @@ ul {
     font-family: "Playfair Display";
     font-size: 25px;
     font-weight: 700;
-    padding: 5px 10px;
+    padding: 10px 10px;
     display: inline-block;
     transition: all 0.3s;
     margin-top: 20px;
@@ -357,7 +364,7 @@ ul {
 
 .btn-personalize {
     width: 324px;
-    height: 60px;
+    height: 70px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -365,7 +372,7 @@ ul {
     font-family: "Playfair Display";
     font-size: 25px;
     font-weight: 700;
-    padding: 10px 10px;
+    padding: 13px 10px;
     display: inline-block;
     transition: all 0.3s;
     margin-top: 70px;
@@ -480,14 +487,14 @@ ul {
 }
 
 .btn-send {
-    width: 184px;
+    width: 160px;
     height: 50px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
     color: #FFF;
     font-family: "Playfair Display";
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 700;
     padding: 5px 10px 5px 0px;
     display: inline-block;
