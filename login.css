@@ -60,7 +60,7 @@ body {
     margin-top: 20px;
 }
 
-.btn-sign-in:hover, .btn-log-in:hover {
+.btn-sign-in:hover{
   background: rgba(255, 255, 255, 0.15);
   border-color: #ffffff;
 }
