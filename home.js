@@ -2,8 +2,7 @@ const slides = [
     {
         title: "A Moment<br>of Love",
         text: "Sometimes, the most beautiful gifts begin with<br>a simple thought. A bouquet chosen with love<br> can say more than words ever could.",
-        image: "./images/hero1.svg"
-    },
+        image: "./images/hero1.svg" },
 
     {
         title: " Special Flowers <br>For You",
@@ -39,6 +38,7 @@ button.addEventListener("click", () => {
 
     hero.style.backgroundImage = `url(${slides[current].image})`;
 });
+
 //expires in 30 days
 function cookieExpireDate() {
     var d = new Date();
