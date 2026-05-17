@@ -108,13 +108,20 @@ ul {
 }
 
 
-.hero {
+#hero {
     padding: 40px 50px;
     position: relative;
     width: 1440px;
     height: 756px;
     background-image: url(./images/hero1.svg);
     background-repeat: no-repeat;
+}
+
+.next-btn{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .hero-container {
@@ -154,7 +161,7 @@ ul {
 .btn-shop {
     display: flex;
     width: 290px;
-    height: 60px;
+    height: 70px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -163,7 +170,7 @@ ul {
     font-size: 27px;
     font-weight: 700;
     line-height: normal;
-    padding: 8px 60px;
+    padding: 13px 60px;
     transition: background-color 0.3s;
     margin-top: 50px;
 }
@@ -172,7 +179,7 @@ ul {
     background-color: #d9799b;
 }
 
-.story-section {
+#story-section {
     padding: 100px 50px;
     text-align: center;
 }
@@ -192,7 +199,7 @@ ul {
 
 .btn-contact {
     width: 290px;
-    height: 50px;
+    height: 60px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -200,7 +207,7 @@ ul {
     font-family: "Playfair Display";
     font-size: 25px;
     font-weight: 700;
-    padding: 5px 10px;
+    padding: 10px 10px;
     display: inline-block;
     transition: all 0.3s;
     margin-top: 20px;
@@ -309,7 +316,7 @@ ul {
     line-height: normal;
 }
 
-.personalize-section {
+#personalize-section {
     padding-top:150px ;
     background-color: #EFD7CE;
     width: 1440px;
@@ -357,7 +364,7 @@ ul {
 
 .btn-personalize {
     width: 324px;
-    height: 60px;
+    height: 70px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
@@ -365,7 +372,7 @@ ul {
     font-family: "Playfair Display";
     font-size: 25px;
     font-weight: 700;
-    padding: 10px 10px;
+    padding: 13px 10px;
     display: inline-block;
     transition: all 0.3s;
     margin-top: 70px;
@@ -480,14 +487,14 @@ ul {
 }
 
 .btn-send {
-    width: 184px;
+    width: 160px;
     height: 50px;
     border-radius: 12px;
     background: #B13862;
     box-shadow: 3px 5px 3.8px 0 rgba(0, 0, 0, 0.25);
     color: #FFF;
     font-family: "Playfair Display";
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 700;
     padding: 5px 10px 5px 0px;
     display: inline-block;
@@ -499,4 +506,92 @@ ul {
 
 .btn-send:hover {
     background-color: #d9799b;
+}
+
+.footer {
+    padding: 60px 50px 20px;
+    background: linear-gradient(90deg, rgba(243, 198, 211, 0.82) 1.26%, #D98CA3 58.6%);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    padding-bottom: 60px;
+    margin-left: 45px;
+    border-bottom: 1px solid #5C3D31;
+}
+
+.footer-brand {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    height: 100px;
+}
+
+.footer-tagline {
+    font-size: 11px;
+    color: #5C3D31;
+    margin-left: 8px;
+    margin-top: -15px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 14px;
+    font-weight: 650;
+    color: #5C3D31;
+    margin-bottom: 15px;
+}
+
+.footer-contact li :hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-links ul li,.footer-contact ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #5C3D31;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.footer-links ul li img,.footer-contact ul li img {
+    width: 16px;
+    height: 16px;
+}
+
+.footer-links ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #5C3D31;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-bottom a:hover {
+    color: rgb(114, 113, 113)
 }
