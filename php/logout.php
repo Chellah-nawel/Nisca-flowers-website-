@@ -1,5 +1,6 @@
 <?php
 // ============================================================
+<<<<<<< HEAD
 //  logout.php — PHP 8.3
 // ============================================================
 session_start();
@@ -15,5 +16,23 @@ setcookie('remember_token', '', [
     'samesite' => 'Lax',
 ]);
 
+=======
+//  Déconnexion
+//  Détruit la session et supprime le cookie, puis redirige
+// ============================================================
+
+session_start();
+
+// Vider toutes les variables de session
+$_SESSION = [];
+
+// Détruire la session côté serveur
+session_destroy();
+
+// Supprimer le cookie en mettant sa date d'expiration dans le passé
+setcookie('nisca_user', '', time() - 3600, '/');
+
+// Rediriger vers la page de connexion
+>>>>>>> e11413b2154c2369a9907f879974908eb4403dff
 header('Location: ../index.php');
 exit();
