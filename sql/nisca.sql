@@ -1,8 +1,3 @@
--- ============================================================
---  Nisca Flowers - Base de données
---  Importer ce fichier dans phpMyAdmin : 
---  Aller dans l'onglet "Importer" et sélectionner ce fichier
--- ============================================================
 
 -- Table des utilisateurs
 CREATE TABLE IF NOT EXISTS users (

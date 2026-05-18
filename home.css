@@ -227,11 +227,39 @@ ul {
 
 .occasions-grid {
     display: flex;
-    justify-content: center;
-    gap: 100px;
+    overflow-x: auto;
     margin-top: -300px;
-    margin-left: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
+    
+}
+.occasions-grid::-webkit-scrollbar {
+    display: none;
+}
+.group{
+    display: flex;
+    gap: 100px;
+    animation: spin 20s linear infinite;
+    padding-right: 100px;
+}
+
+@keyframes spin {
+    from {translate: 0;}
+    to {transform: translateX(calc(-100% - 100px));}
+}
+
+.occasions-grid:hover .group {
+    animation-play-state: paused;
+}
+
+.occasion-card p {
+    flex: 0 0 5em;
+    color: #5C3D31;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 10px;
 }
 
 .occasion-image img {
@@ -250,15 +278,7 @@ ul {
     margin-bottom: 30px;
 }
 
-.occasion-card p {
-    color: #5C3D31;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 10px;
-}
+
 
 .see-more {
     color: #B13862;
@@ -593,8 +613,7 @@ ul {
 }
 
 .footer-bottom a:hover {
-    color: rgb(114, 113, 113)
-<<<<<<< HEAD
+    color: rgb(114, 113, 113);
 }
 
 #cookie-banner {
