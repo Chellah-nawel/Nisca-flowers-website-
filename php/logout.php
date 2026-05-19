@@ -1,20 +1,17 @@
 <?php
-// ============================================================
-//  Déconnexion
-//  Détruit la session et supprime le cookie, puis redirige
-// ============================================================
-
 session_start();
 
-// Vider toutes les variables de session
+//vider et detruire la session
 $_SESSION = [];
-
-// Détruire la session côté serveur
 session_destroy();
 
-// Supprimer le cookie en mettant sa date d'expiration dans le passé
-setcookie('nisca_user', '', time() - 3600, '/');
+//supprimer le cookie avec exactement les memes options qu'a la creation
+setcookie('nisca_user', '', [
+    'expires'  => time() - 3600,
+    'path'     => '/',
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 
-// Rediriger vers la page de connexion
 header('Location: ../index.php');
 exit();

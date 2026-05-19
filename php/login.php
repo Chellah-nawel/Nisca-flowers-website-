@@ -1,73 +1,53 @@
 <?php
-// ============================================================
-//  php/login.php  —  Compatible PHP 5.5
-// ============================================================
 session_start();
+require_once 'config.php';
 
-// ── Connexion BDD ────────────────────────────────────────────
-$host   = 'localhost';
-$db     = 'nisca_db';
-$dbuser = 'root';
-$dbpass = '';
-
-$dsn = "mysql:host=$host;dbname=$db";
-
-try {
-    $pdo = new PDO($dsn, $dbuser, $dbpass, array(
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
-    ));
-} catch (PDOException $e) {
-    header('Location: ../index.php?error=' . urlencode('BDD error connection ' . $e->getMessage()));
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: ../index.php');
     exit();
 }
 
-// ── Récupération des données POST ────────────────────────────
-$name     = isset($_POST['name'])     ? trim($_POST['name'])  : '';
-$password = isset($_POST['password']) ? $_POST['password']    : '';
+if(isset($_POST['name'])) {
+    $username = trim($_POST['name']);
+} else {
+    $username = '';
+}
 
-if ($name === '' || $password === '') {
-    header('Location: ../index.php?error=' . urlencode('Fill all fields.'));
+if(isset($_POST['password'])) {
+    $password = $_POST['password'];
+} else {
+    $password = '';
+}
+
+if (!$username || !$password) {
+    header('Location: ../index.php?error=All+fields+are+required');
     exit();
 }
 
-// ── Vérification en BDD ──────────────────────────────────────
-$stmt = $pdo->prepare('SELECT id, name, password FROM users WHERE name = ?');
-$stmt->execute(array($name));
-$userRow = $stmt->fetch();
 
-if (!$userRow || !password_verify($password, $userRow['password'])) {
-    header('Location: ../index.php?error=' . urlencode('Name or password incorrect.'));
+$stmt = $pdo->prepare("SELECT * FROM users WHERE name = ?");
+$stmt->execute([$username]);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user || !password_verify($password, $user['password'])) {
+    header('Location: ../index.php?error=Username+or+password+is+incorrect');
     exit();
 }
 
-// ── Création de la session ───────────────────────────────────
-$_SESSION['user_id']   = $userRow['id'];
-$_SESSION['user_name'] = $userRow['name'];
+// regenerer l'id de session
+session_regenerate_id(true);
 
-// ── Cookie "se souvenir" — syntaxe PHP 5.5 compatible ────────
-// random_bytes() n'existe pas en PHP 5.5, on utilise openssl_random_pseudo_bytes
-$tokenBytes = openssl_random_pseudo_bytes(32);
-$token      = bin2hex($tokenBytes);
+//stocker les infos en session
+$_SESSION['user_id']   = $user['id'];
+$_SESSION['user_name'] = $user['name'];
 
-// setcookie() avec tableau n'existe qu'en PHP 7.3+
-// En PHP 5.5 on utilise la signature classique :
-// setcookie(name, value, expire, path, domain, secure, httponly)
-setcookie(
-    'remember_token',           // nom du cookie
-    $token,                     // valeur
-    time() + 30 * 24 * 3600,   // expiration : 30 jours
-    '/',                        // path
-    '',                         // domain (vide = domaine actuel)
-    false,                      // secure (true uniquement en HTTPS)
-    true                        // httponly : inaccessible au JS
-);
+//cookies valide 30 jours
+setcookie('nisca_user', $user['name'], [
+    'expires'  => time() + 30 * 24 * 60 * 60,
+    'path'     => '/',
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
 
-// ── Cookie de consentement (affiché côté JS, confirmé ici) ───
-// On le lit mais ne le force pas — le JS gère l'affichage
-// de la bannière via localStorage
-
-// ── Redirection ───────────────────────────────────────────────
 header('Location: ../home.php');
 exit();
