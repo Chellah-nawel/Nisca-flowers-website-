@@ -25,34 +25,30 @@ const hero = document.getElementById("hero");
 const button = document.querySelector(".next-btn");
 
 button.addEventListener("click", () => {
-
     current++;
-
     if(current >= slides.length){
         current = 0;
     }
-
     title.innerHTML = slides[current].title;
-
     text.innerHTML = slides[current].text;
-
     hero.style.backgroundImage = `url(${slides[current].image})`;
 });
 
-//expires in 30 days
-// ── Cookie banner ────────────────────────────────────────────
+//cookies
 document.addEventListener('DOMContentLoaded', function () {
-
-    var banner = document.getElementById('cookie-banner');
-
+    var cookkies_bar = document.getElementById('cookies_bar');
+    
     function getCookie(name) {
         var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-        return match ? match[2] : null;
+        if (match) {
+            return match[2];
+        } else {
+            return null;
+        }
     }
-
-    // Afficher si aucun choix enregistré (ni localStorage ni cookie)
+    
     if (!localStorage.getItem('cookieConsent') && !getCookie('cookieConsent')) {
-        banner.style.display = 'flex';
+        cookkies_bar.style.display = 'flex';
     }
 
     window.acceptCookies = function () {
@@ -60,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         expires.setTime(expires.getTime() + 30 * 24 * 60 * 60 * 1000);
         localStorage.setItem('cookieConsent', 'accepted');
         document.cookie = 'cookieConsent=accepted; expires=' + expires.toUTCString() + '; path=/';
-        banner.style.display = 'none';
+        cookkies_bar.style.display = 'none';
     };
 
     window.declineCookies = function () {
@@ -68,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
         expires.setTime(expires.getTime() + 30 * 24 * 60 * 60 * 1000);
         localStorage.setItem('cookieConsent', 'declined');
         document.cookie = 'cookieConsent=declined; expires=' + expires.toUTCString() + '; path=/';
-        banner.style.display = 'none';
+        cookkies_bar.style.display = 'none';
     };
 
-    // ── Auto-masquer les messages après 4s ───────────────────
     setTimeout(function () {
         var msgs = document.querySelectorAll('.msg-box');
         for (var i = 0; i < msgs.length; i++) {

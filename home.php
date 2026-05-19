@@ -1,15 +1,19 @@
 <?php
-//si il n'est pas connecte yrouh login (index.php)
-session_start();
-if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
-    exit();
-}
-$userName = $_SESSION['user_name'];
 
-//confirm form submission
-$contactSuccess = isset($_GET['contact_success']) ? $_GET['contact_success'] : '';
-$contactError   = isset($_GET['contact_error'])   ? $_GET['contact_error']   : '';
+session_start();
+$isLoggedIn = isset($_SESSION['user_id']);
+$contactSuccess = '';
+$contactError = '';
+
+if ($isLoggedIn) {
+    $userName = $_SESSION['user_name'];
+}
+
+if (isset($_GET['contact_success'])) {
+    $contactSuccess = $_GET['contact_success'];
+} elseif (isset($_GET['contact_error'])) {
+    $contactError = $_GET['contact_error'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +49,17 @@ $contactError   = isset($_GET['contact_error'])   ? $_GET['contact_error']   : '
                 </ul>
             </nav>
             <div class="header-actions">
-                <a href="#" class="cart-icon">
-                    <img src="images/shopicon.svg" alt="Cart">
-                </a>
-                <a href="php/logout.php" class="btn-join">Logout</a>
+                <?php if ($isLoggedIn): ?>
+                    <a href="cart.php" class="cart-icon">
+                        <img src="images/shopicon.svg" alt="Cart">
+                    </a>
+                    <a href="php/logout.php" class="btn-join">Logout</a>
+                <?php else: ?>
+                    <a href="index.php" class="cart-icon" >
+                        <img src="images/shopicon.svg" alt="Cart">
+                    </a>
+                    <a href="index.php" class="btn-join">Login</a>
+                <?php endif; ?>
             </div>
         </div>
     </header>
@@ -291,7 +302,7 @@ $contactError   = isset($_GET['contact_error'])   ? $_GET['contact_error']   : '
         </div>
     </footer>
 
-    <div id="cookie-banner" style="display:none;">
+    <div id="cookies_bar" style="display:none;">
         <p>
             🍪 We use cookies to improve your experience on Nisca Flowers.
             By continuing, you accept our <a href="#https://commission.europa.eu/cookies-policy_en">cookie policy</a>.

@@ -616,7 +616,7 @@ ul {
     color: rgb(114, 113, 113);
 }
 
-#cookie-banner {
+#cookies_bar {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   background-color: rgba(92, 61, 49, 0.96);
@@ -632,14 +632,14 @@ ul {
   box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
 }
 
-#cookie-banner p { 
+#cookies_bar p { 
   margin: 0; 
   flex: 1; 
   line-height: 1.6; 
 }
 
 
-#cookie-banner a { 
+#cookies_bar a { 
   color: #D98CA3; 
   text-decoration: underline; 
 }
